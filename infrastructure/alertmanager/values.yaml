@@ -1,0 +1,35 @@
+alertmanager:
+  enabled: true
+
+  alertmanagerSpec:
+    replicas: 1
+
+  config:
+    global:
+      resolve_timeout: 5m
+
+    route:
+      receiver: default-receiver
+      group_wait: 30s
+      group_interval: 5m
+      repeat_interval: 4h
+
+    receivers:
+      - name: default-receiver
+
+# Future Slack Configuration Example
+
+# alertmanager:
+#   config:
+#     global:
+#       resolve_timeout: 5m
+#
+#     route:
+#       receiver: slack-notifications
+#
+#     receivers:
+#       - name: slack-notifications
+#         slack_configs:
+#           - api_url: https://hooks.slack.com/services/XXXXX/YYYYY/ZZZZZ
+#             channel: "#observability-alerts"
+#             send_resolved: true

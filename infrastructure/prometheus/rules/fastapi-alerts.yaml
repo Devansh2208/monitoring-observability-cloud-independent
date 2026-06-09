@@ -1,0 +1,27 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+
+metadata:
+  name: fastapi-alerts
+  namespace: observability
+  labels:
+    release: monitoring
+
+spec:
+  groups:
+  - name: demo.rules
+
+    rules:
+    - alert: DemoAlert
+
+      expr: vector(1)
+
+      for: 10s
+
+      labels:
+        severity: critical
+
+      annotations:
+        summary: Demo Alert
+
+        description: Alert pipeline validation
