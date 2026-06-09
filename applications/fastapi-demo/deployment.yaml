@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-demo
+  namespace: observability
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: fastapi-demo
+
+  template:
+    metadata:
+      labels:
+        app: fastapi-demo
+
+    spec:
+      containers:
+      - name: fastapi-demo
+
+        image: fastapi-demo:v1
+
+        imagePullPolicy: Never
+
+        ports:
+        - containerPort: 8000

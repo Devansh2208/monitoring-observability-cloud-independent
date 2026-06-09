@@ -1,0 +1,12 @@
+grafana:
+  adminPassword: admin123
+
+alertmanager:
+  enabled: true
+
+prometheus:
+  prometheusSpec:
+    retention: 15d
+
+nodeExporter:
+  enabled: false
