@@ -1,0 +1,11 @@
+# infrastructure/loki/values.yaml
+
+loki:
+  persistence:
+    enabled: false
+
+promtail:
+  enabled: true
+
+grafana:
+  enabled: false
