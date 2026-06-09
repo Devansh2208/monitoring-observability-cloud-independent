@@ -310,8 +310,3 @@ Planned
 
 ---
 
-## Authors
-
-Platform Engineering Team
-
-Observability Platform Initiative
